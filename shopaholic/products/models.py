@@ -4,8 +4,8 @@ from django.db import models
 
 
 class Websites(models.Model):
-    website = models.CharField(max_length=100)
-    website_url = models.URLField()
+    name = models.CharField(max_length=100)
+    url = models.URLField()
 
     class Meta:
         verbose_name = 'Website'
