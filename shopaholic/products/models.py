@@ -41,8 +41,14 @@ class Category(models.Model):
 
 
 class Item(TimeStampedModel):
+    GENDER_TYPE_CHOICES = (
+        ('NA', 'Doesn\'t Matter',),
+        ('MALE', 'Male',), ('FEMALE', 'Female',),
+        ('BOY', 'Boy',), ('GIRL', 'Girl',),
+    )
     name = models.CharField(max_length=200)
     details = models.TextField(null=True, blank=True)
+    gender_type = models.CharField(max_length=50, choices=GENDER_TYPE_CHOICES)
     url = models.URLField()
     category = models.ForeignKey(Category)
     brand = models.ForeignKey(Brand)
