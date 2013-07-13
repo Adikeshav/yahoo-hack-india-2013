@@ -3,6 +3,14 @@ from django.db import models
 # Create your models here.
 
 
+class TimeStampModel(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        abstract = True
+
+
 class Website(models.Model):
     name = models.CharField(max_length=100)
     url = models.URLField()
@@ -32,7 +40,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
 
-class Item(models.Model):
+class Item(TimeStampModel):
     name = models.CharField(max_length=200)
     details = models.TextField(null=True, blank=True)
     url = models.URLField()
