@@ -14,3 +14,6 @@ class UserInterest(models.Model):
     interest = models.ForeignKey(Category)
     brand = models.ForeignKey(Brand)
     gender_type = models.CharField(max_length=50, choices=GENDER_TYPE_CHOICES)
+
+    def __unicode__(self):
+        return self.email + self.interest.name

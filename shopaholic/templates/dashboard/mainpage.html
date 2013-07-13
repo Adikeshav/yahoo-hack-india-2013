@@ -4,8 +4,13 @@
     <title></title>
 </head>
 <body>
-    <form action="" method="post">
-
+    <form action="" method="post"> {% csrf_token %}
+        Email:{{ interest_form.email }}<br>
+        You are:{{ interest_form.gender_type }}<br>
+        Interest:{{ interest_form.interest }}<br>
+        Brand:{{ interest_form.brand }}<br>
+        <input type="submit" value="Submit">
     </form>
+    {{ result }}
 </body>
 </html>

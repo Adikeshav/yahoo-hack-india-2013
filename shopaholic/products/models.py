@@ -16,6 +16,9 @@ class Website(models.Model):
     url = models.URLField()
     slug = models.SlugField()
 
+    def __unicode__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Website'
         verbose_name_plural = 'Websites'
@@ -24,6 +27,9 @@ class Website(models.Model):
 class Brand(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField()
+
+    def __unicode__(self):
+        return self.name
 
     class Meta:
         verbose_name = 'Brand'
@@ -34,6 +40,9 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     parent = models.IntegerField(default=0, null=True, blank=True)
     slug = models.SlugField()
+
+    def __unicode__(self):
+        return self.name
 
     class Meta:
         verbose_name = 'Category'
@@ -54,6 +63,9 @@ class Item(TimeStampedModel):
     brand = models.ForeignKey(Brand)
     website = models.ForeignKey(Website)
     slug = models.SlugField()
+
+    def __unicode__(self):
+        return self.name
 
     class Meta:
         verbose_name = 'Item'

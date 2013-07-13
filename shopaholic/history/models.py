@@ -12,6 +12,9 @@ class History(TimeStampedModel):
     is_on_sale = models.BooleanField(default=False)
     is_in_stock = models.BooleanField(default=True)
 
+    def __unicode__(self):
+        return self.item.name + self.offer_text
+
     class Meta:
         verbose_name = "History"
         verbose_name_plural = "Histories"

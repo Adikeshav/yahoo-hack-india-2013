@@ -1,5 +1,6 @@
 from django import forms
-from dashboard.models import UserInterest
+
+from .models import UserInterest
 
 
 class UserInterestForm(forms.ModelForm):
