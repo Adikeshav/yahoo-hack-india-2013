@@ -3,10 +3,16 @@ from django.db import models
 # Create your models here.
 
 
+<<<<<<< HEAD
 class Website(models.Model):
     website = models.CharField(max_length=100)
     website_url = models.URLField()
     slug = models.SlugField()
+=======
+class Websites(models.Model):
+    name = models.CharField(max_length=100)
+    url = models.URLField()
+>>>>>>> fe38768b4fcc89bc25ab20b62df0724f6d6d792d
 
     class Meta:
         verbose_name = 'Website'
