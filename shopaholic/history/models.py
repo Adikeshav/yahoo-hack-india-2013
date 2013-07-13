@@ -1,9 +1,9 @@
 from django.db import models
 
-from products.models import TimeStampModel, Item
+from products.models import TimeStampedModel, Item
 
 
-class History(TimeStampModel):
+class History(TimeStampedModel):
     item = models.ForeignKey(Item)
     offer_text = models.TextField(null=True, blank=True)
     selling_price = models.FloatField()

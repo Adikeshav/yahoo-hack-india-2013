@@ -40,7 +40,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
 
-class Item(TimeStampModel):
+class Item(TimeStampedModel):
     name = models.CharField(max_length=200)
     details = models.TextField(null=True, blank=True)
     url = models.URLField()
