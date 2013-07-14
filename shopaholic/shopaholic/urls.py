@@ -17,5 +17,6 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('',
-    url(r'^$', 'dashboard.views.dashboard'),
+    url(r'^/?$', 'dashboard.views.dashboard'),
+    url(r'^product/(?P<slug>.+?)/?$','dashboard.views.product_page')
 )

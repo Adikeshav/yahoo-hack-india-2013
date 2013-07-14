@@ -18,7 +18,7 @@
   <body>
     <div id="c_wrap">
 
-      <div class="container_wrap c_header">
+      <div class="container_wrap c_header_other">
         <div class="container">
           <div class="row">
             <div class="span6">
@@ -29,10 +29,7 @@
               <a class="c_top_get_alert" href="#">Get alerts for free</a>
             </div>
           </div>
-          <div class="row c_header_heading">
-            <h1>Free alerts</h1>
-            <h4>Get alerted on unreal discounts absolutely free!</h4>
-          </div>
+         
         </div>
       </div>
 
@@ -201,6 +198,40 @@
       </div>
 
 
+       <div class="container_wrap c_product_wrap">
+        <div class="container">
+          <div class="row">
+            <h4>NIKE MEN BLACK SWEET CLASSIC HIGH CASUAL SHOES</h4>
+            <div class="span4 c_product_each">
+              <div class="c_product_image_wrap">
+                <img src="" alt="">
+              </div>
+              </div>
+              <div class="span2">
+                
+                <h5>Rs.4599 <b> Rs.6570</b></h5>
+                <h6>30% off</h6>
+                <p></p>
+              </div>
+              <div class="span6">
+                    <h4>Price Variation through the past 6 months</h4>
+                    <div id="mychart" style="width:100%;height:200px;"></div>
+                  
+                
+              </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="container_wrap c_chart_data">
+        <div class="container">
+          <div class="row">
+            
+          </div>
+        </div>
+      </div>
+
       <div class="container_wrap">
         <div class="container">
           <div class="row">
@@ -245,6 +276,28 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+     <script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script>
+    <script>
+    // Create a new YUI instance and populate it with the required modules.
+    YUI().use('charts', function (Y) {
+        // Charts is available and ready for use. Add implementation
+        // code here.
+        // Data for the chart
+          var myDataValues = [
+              {category:"Mar", values:6399},
+              {category:"Apr", values:6570},
+              {category:"May", values:5899},
+              {category:"Jun", values:6299},
+              {category:"Today", values:4599}
+          ];
+
+          // Instantiate and render the chart
+          var mychart = new Y.Chart({
+              dataProvider: myDataValues,
+              render: "#mychart"
+          });
+    });
+    </script>
     <script type="text/javascript">
       $(document).ready(function(){
 
