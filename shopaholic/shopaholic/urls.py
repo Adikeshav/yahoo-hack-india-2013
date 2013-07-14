@@ -14,9 +14,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^parse-jabong/', 'html_parser.views.parse_jabong', name='parse_jabong'),
 )
 
 urlpatterns += patterns('',
-    url(r'^/?$', 'dashboard.views.dashboard'),
-    url(r'^product/(?P<slug>.+?)/?$','dashboard.views.product_page')
+                        url(r'^/?$', 'dashboard.views.dashboard'),
+                        url(r'^product/(?P<slug>.+?)/?$','dashboard.views.product_page')
 )
