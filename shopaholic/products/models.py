@@ -63,10 +63,12 @@ class Item(TimeStampedModel):
     brand = models.ForeignKey(Brand)
     website = models.ForeignKey(Website)
     slug = models.SlugField()
-
+    image_url1 = models.URLField(null=True, blank=True)
+    image_url2 = models.URLField(null=True, blank=True)
+    image_url3 = models.URLField(null=True, blank=True)
+    
     def __unicode__(self):
         return self.name
 
     class Meta:
         verbose_name = 'Item'
-        verbose_name_plural = 'Items'
