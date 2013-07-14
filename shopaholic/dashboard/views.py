@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 
 from .forms import UserInterestForm
+from history.models import History
 from products.models import Item
 
 
@@ -22,9 +23,15 @@ def dashboard(request):
                                                  gender_type=cleaned_data['gender_type'])
             if cleaned_data['email']:
                 interest_form.save()
-            temp_dict['result'] = filtered_items
+            try:
+                history_list = History.objects.filter(item__in=filtered_items)
+            except:
+                history_list = []
+            temp_dict['result'] = history_list
+            filtered_items
         else:
             temp_dict['result'] = "Form contains errors:" + str(interest_form.errors)
+
     temp_dict['interest_form'] = interest_form
     return render_to_response('dashboard/mainpage.html',
                               temp_dict,

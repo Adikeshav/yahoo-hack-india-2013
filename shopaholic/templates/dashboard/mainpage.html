@@ -1,7 +1,7 @@
 
 
 
-    {{ result }}
+
 
 
 <!DOCTYPE html>
@@ -165,8 +165,20 @@
               </div>
              </form>
           </div>
+
+          {% if result %}
           <div class="row">
             <br><br><h3>Featured results/ Most Popular</h3><br>
+            {% for each_result in result %}
+            <div class="span3 c_result_each">
+              <div class="c_result_each_image">
+                <img src="{{ each_result.item.image_url1 }}" alt="image">
+              </div>
+              <h5>{{  each_result.item.name }}</h5>
+              <h2>{{ each_result.discount_rate }}% off</h2>
+            </div>
+            {% endfor %}
+
             <div class="span3 c_result_each">
               <div class="c_result_each_image">
                 <img src="{{ STATIC_URL }}img/1-nikelogos.jpg" alt="image">
@@ -197,6 +209,7 @@
             </div>
 
           </div>
+            {% endif %}
         </div>
       </div>
 
